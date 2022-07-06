@@ -1,0 +1,336 @@
+:root {
+    --primary-color: rgb(43, 43, 70);
+    --secondary-color: #f3f3f3;
+    --accent-color: rgb(8, 181, 250);
+    --gap: 1rem;
+}
+body {
+   
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.navbar {
+    background:#173459;
+}
+.logo{
+padding:0;
+margin:0;
+width:70%;}
+.nav-link,
+.navbar-brand {
+    color: #fff;
+    cursor: pointer;
+}
+.nav-link {
+    margin-right: 1em !important;
+}
+.nav-link:hover {
+    color: #000;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+ @media (max-width: 575px) {
+    button.navbar-toggler {
+        position: absolute !important;
+        right: 10px !important;
+        top: 14px !important;
+    }
+    .gfonts{font-family: 'Arvo', serif;
+    text-align:center;}
+    img {
+    width: 100%;
+    height: auto;
+    
+    }
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+.pad{
+margin:0.05em 0.1em 0.2em 1.1em;
+padding:0.5em;
+line-height:200%;}
+.form--title {
+    margin-bottom: 1em;
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+.form--input {
+    padding: .5rem;
+    border: 2px solid var(--accent-color);
+    border-radius: .5rem;
+}
+.form-container {
+         margin: 20px;
+         padding: 15px;
+         background: #173459;
+         color: white;
+         -shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+      }
+      .input-cnt {
+         display: flex; /* display the icon and the input in a line */
+         margin-bottom: 15px;
+      }
+      .input-cnt:last-child {
+         margin-bottom: 0px;
+      }
+      .input-cnt > i {
+         min-width: 73px; /* set a minimum width for the icon */
+         padding: 10px; /* make sure the icon is centered vertically */
+         text-align: center; /* horizontally center the icon */
+         background: lightgrey;
+         border-top-left-radius: 20px;
+         border-bottom-left-radius: 20px;
+         color: #0076ff;
+      }
+      /* change styles when focused */
+      .input-cnt:hover > i {
+         background: #0076ff;
+         color: white;
+      }
+      /* style the input and textarea */
+      .input-cnt > input[type="text"],input[type="tel"],input[type="email"], .input-cnt > textarea  {
+         outline: none;
+         border: none;
+         padding: 10px;
+         border: 1px solid lightgrey;
+         border-top-right-radius: 20px;
+         border-bottom-right-radius: 20px;
+         width: 100%;
+      }
+      /* center textarea icon and increase size */
+      .textarea-icon {
+         padding: 60px 10px !important; /* top and bottom paddings are set to 60px */
+      }
+      /* style the submit button */
+      .input-cnt > input[type="submit"] {
+         border: none;
+         border-radius: 20px;
+         outline: none;
+         width: 75%;
+         margin: 0 auto;
+         font-size: 105%;
+         padding: 8px;
+         color: #0076ff;
+         background: white;
+         transition-duration: .5s;
+      }
+      /* add a hover effect for the submit button */
+      .input-cnt > input[type="submit"]:hover {
+         color: white;
+         background: #0076ff;
+      }
+#submit {
+    padding: .7em 1.2em;
+    width: 90%;
+    text-align:center;
+    background-color:red;
+    color: var(--secondary-color);
+    font-weight: 600;
+    border: none;
+    border-radius: .5rem;
+    margin-top: .5rem;
+}
+
+
+.form--modal {
+    margin: auto;
+    padding: 3rem 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+.form--modal::backdrop {
+    background: rgba(03, 53, 97, .5);
+}
+.close-modal-btn {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    display: flex;
+}
+.close-modal-btn i {
+    margin: auto;
+    font-size: 1.5rem;
+}
+.footer-distributed{
+ background-color: #173459;;
+ box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+ box-sizing: border-box;
+ width: 100%;
+ text-align: left;
+ font: bold 16px sans-serif;
+ 
+ padding: 55px 50px;
+ margin-top: 5px;
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+ display:inline-block ;
+ vertical-align: top;
+}
+ 
+.footer-distributed .footer-left{
+ width: 40%;
+}
+ 
+.footer-distributed h3{
+ color:  #ffffff;
+ font: normal 36px 'Cookie', cursive;
+ margin: 0;
+}
+ 
+.footer-distributed h3 span{
+ color:  #5383d3;
+}
+ 
+ 
+.footer-distributed .footer-links{
+ color:#f5b042;
+ margin:20px;
+ padding: 0;
+}
+ 
+.footer-distributed .footer-links a{
+ display:inline-block;
+ line-height: 1.8;
+ text-decoration: none;
+ color:  inherit;
+}
+ 
+.footer-distributed .footer-company-name{
+ color:  #8f9296;
+ font-size: 14px;
+ font-weight: normal;
+ margin: 0;
+}
+ 
+ 
+.footer-distributed .footer-center{
+ width: 35%;
+}
+ 
+.footer-distributed .footer-center i{
+ background-color:  #0076ff;
+ color: #ffffff;
+ font-size: 25px;
+ width: 38px;
+ height: 38px;
+ border-radius: 50%;
+ text-align: center;
+ line-height: 42px;
+ margin: 10px 15px;
+ vertical-align: middle;
+}
+ 
+.footer-distributed .footer-center i.fa-envelope{
+ font-size: 17px;
+ line-height: 38px;
+}
+ 
+.footer-distributed .footer-center p{
+ display: inline-block;
+ color: #ffffff;
+ vertical-align: middle;
+ margin:0;
+}
+ 
+.footer-distributed .footer-center p span{
+ display:block;
+ font-weight: normal;
+ font-size:14px;
+ line-height:2;
+}
+ 
+.footer-distributed .footer-center p a{
+ color:  #5383d3;
+ text-decoration: none;;
+}
+ 
+.footer-distributed .footer-right{
+ width: 20%;
+}
+ 
+.footer-distributed .footer-company-about{
+ line-height: 20px;
+ color:  #92999f;
+ font-size: 13px;
+ font-weight: normal;
+ margin: 0;
+}
+ 
+.footer-distributed .footer-company-about span{
+ display: block;
+ color:  #ffffff;
+ font-size: 14px;
+ font-weight: bold;
+ margin-bottom: 20px;
+}
+ 
+.footer-distributed .footer-icons{
+ margin-top: 25px;}
+.footer-distributed .footer-icons a{
+ display: inline-block;
+ width: 35px;
+ height: 35px;
+ cursor: pointer;
+ background-color:  #0076ff;
+ border-radius: 2px;
+ 
+ font-size: 20px;
+ color: #ffffff;
+ text-align: center;
+ line-height: 35px;
+ 
+ margin-right: 3px;
+ margin-bottom: 5px;
+
+ }
+ 
+@media (max-width: 880px) {
+ 
+ .footer-distributed{
+ font: bold 14px sans-serif;
+ 
+ }
+ 
+ .footer-distributed .footer-left,
+ .footer-distributed .footer-center,
+ .footer-distributed .footer-right{
+ display: block;
+ width: 100%;
+ margin-bottom:10px;
+ text-align: center;
+ }
+ 
+ .footer-distributed .footer-center i{
+ margin-left: 0;
+ }
