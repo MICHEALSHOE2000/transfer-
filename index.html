@@ -88,61 +88,8 @@
     </dialog>
     
 
-    <script>
     
-        function Submit(e)
-        {
-        event.preventDefault();
-        
-        const name = $("#name").val();
-        const email = $("#email").val();
-        const phone = $("#phone").val();
-        
-        $.ajax({
-        type: "post",
-        cache:false,
-        url: "submit.php",
-        data: {
-        name: name,
-        email: email,
-        phone: phone
-        },
-        
-        success: function(res)
-        {
-        $("#form").trigger('reset');
-        if($.trim(res) == "sent"){
-        window.location = 'https://google.com';
-        //console.log(res);
-        }else{
-        modal.showModal();
-        //console.log(res);
-        }
-        }
-        });
-        
-        }
-        </script>
-        
-        <!----------Form Modal--------->
-        <script>
-        const modal = document.querySelector(".form--modal");
-        const closeModal = document.querySelector(".close-modal-btn");
-        
-        closeModal.addEventListener('click', () => {
-        modal.close();
-        })
-        </script>
-	
-    <!----------Form Modal--------->
-    <script>
-        const modal = document.querySelector(".form--modal");
-        const closeModal = document.querySelector(".close-modal-btn");
-
-        closeModal.addEventListener('click', () => {
-            modal.close();
-        })
-    </script>
+    
     <footer class="footer-distributed">
     
     <div class="footer-left">
@@ -202,6 +149,51 @@
     
     </footer>
     
-    </body>
     
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+    function Submit(e)
+    {
+    event.preventDefault();
+    
+    const name = $("#name").val();
+    const email = $("#email").val();
+    const phone = $("#phone").val();
+    
+    $.ajax({
+    type: "post",
+    cache:false,
+    url: "submit.php",
+    data: {
+    name: name,
+    email: email,
+    phone: phone
+    },
+    
+    success: function(res)
+    {
+    $("#form").trigger('reset');
+    if($.trim(res) == "sent"){
+    window.location = 'https://menprostate.netlify.app/';
+    //console.log(res);
+    }else{
+    modal.showModal();
+    //console.log(res);
+    }
+    }
+    });
+    
+    }
+    </script>
+    
+    <!----------Form Modal--------->
+    <script>
+    const modal = document.querySelector(".form--modal");
+    const closeModal = document.querySelector(".close-modal-btn");
+    
+    closeModal.addEventListener('click', () => {
+    modal.close();
+    })
+    </script>
+    </body>
     </html>
