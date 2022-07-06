@@ -55,29 +55,30 @@
 <li>SAY GOODBYE TO BATHROOM NIGHT</li>
 </ul>
 </div>
-    <main class="main">
-        <div class=" form-container">
-            <h3 class="form--title">Get A Free Copy Of Our Ebook Below</h3>
-            <form id="form" class="form" onsubmit="Submit(this)">
-               <div class="input-cnt">
-                <i class="material-icons">person</i>
-                <input id="fname" type="text" placeholder="Name" name="Name" required/>
-                </div>
-                <div class="input-cnt">
-                <i class="material-icons">email</i>
-                <input id="email" type="email" placeholder="Example@mail.com" name="email" />
-                </div>
-                
-                <div class="input-cnt">
-                <i class="material-icons">phone No</i>
-                <input id="phone" type="Tel"  name="Phone no" placeholder="07088888555" 
-                minlenght="11" pattern="\d{11}"  required/>
-                </div>
-                
-                 <button type="submit" id="submit">Get Ebook Now!</button>
-            </form>
-        </div>
-    </main>
+   <main class="main">
+   <div class=" form-container">
+   <h3 class="form--title">Get A Free Copy Of Our Ebook Below</h3>
+   <form id="form" class="form" onsubmit="Submit(this)">
+   <div class="input-cnt">
+   <i class="material-icons">person</i>
+   <input id="name" type="text" placeholder="Name" name="Name" required/>
+   </div>
+   <div class="input-cnt">
+   <i class="material-icons">email</i>
+   <input id="email" type="email" placeholder="Example@mail.com" name="email" />
+   </div>
+   
+   <div class="input-cnt">
+   <i class="material-icons">phone No</i>
+   <input id="phone" type="Tel"  name="Phone no" placeholder="07088888555" 
+   minlenght="11" pattern="\d{11}"  required/>
+   </div>
+   
+   <button type="submit" id="submit">Get Ebook Now!</button>
+   </form>
+   </div>
+   </main>
+    
     
     <dialog class="form--modal">
         <div class="close-modal-btn">
@@ -88,45 +89,51 @@
     
 
     <script src="js/jquery-3.4.1.min.js"></script>
-    <script>
-        
-	function Submit(e)
+    
+        function Submit(e)
         {
-            event.preventDefault();
-
-            const fname = $("#fName").val();
-            const lname = $("#lName").val();
-            const email = $("#email").val();
-            const message = $("#message").val();
-
-            
-            $.ajax({
-                type: "post",
-                cache:false,
-                url: "submit.php",
-                data: {
-                    firstName: fname,
-                    lastName: lname,
-                    email: email,
-                    message: message
-                },
-
-                success: function(res)
-                {
-                    $("#form").trigger('reset');
-                    if($.trim(res) == "sent"){
-                        window.location = 'https://google.com';
-                        //console.log(res);
-                    }else{
-                        modal.showModal();
-                        //console.log(res);
-                    }
-                }
-            });
-            
+        event.preventDefault();
+        
+        const name = $("#name").val();
+        const email = $("#email").val();
+        const phone = $("#phone").val();
+        
+        $.ajax({
+        type: "post",
+        cache:false,
+        url: "submit.php",
+        data: {
+        name: name,
+        email: email,
+        phone: phone
+        },
+        
+        success: function(res)
+        {
+        $("#form").trigger('reset');
+        if($.trim(res) == "sent"){
+        window.location = 'https://google.com';
+        //console.log(res);
+        }else{
+        modal.showModal();
+        //console.log(res);
         }
-    </script>
-
+        }
+        });
+        
+        }
+        </script>
+        
+        <!----------Form Modal--------->
+        <script>
+        const modal = document.querySelector(".form--modal");
+        const closeModal = document.querySelector(".close-modal-btn");
+        
+        closeModal.addEventListener('click', () => {
+        modal.close();
+        })
+        </script>
+	
     <!----------Form Modal--------->
     <script>
         const modal = document.querySelector(".form--modal");
